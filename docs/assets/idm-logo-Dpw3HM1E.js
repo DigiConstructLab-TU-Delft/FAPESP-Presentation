@@ -1,0 +1,1 @@
+var e=``+new URL(`../figures/idm-logo.jpg`,import.meta.url).href;export{e as t};

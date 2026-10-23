@@ -1,0 +1,7 @@
+# Dependencies and local builds
+node_modules/
+dist/
+
+# Local system and editor files
+.DS_Store
+.claude/
