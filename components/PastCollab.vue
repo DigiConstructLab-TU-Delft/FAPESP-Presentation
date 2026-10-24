@@ -4,7 +4,7 @@ import { asset } from '../composables/asset'
 
 // Past collaboration with Brazil on one slide. Photos: TU Delft news item "TU Delft extends strong collaboration with Brazil"
 // (1 May 2023), a group photo supplied for the deck, and a P1MC cistern by Moacir Ximenes (Wikimedia Commons, public domain).
-const step = useAutoSteps(8, 280, 150)
+const step = useAutoSteps(7, 280, 150)
 
 const timeline = [
   { when: '2015', place: 'São Paulo', text: 'Prof. Marcel Hertogh directed the international seminar on the Architectural and Urban Articulation of the Metropolitan Waterway System of São Paulo.', at: 1 },
@@ -54,10 +54,6 @@ const photos = [
         <img src="/figures/brazil/p1mc-cistern.jpg" alt="A P1MC rainwater cistern with its programme plaque" />
         <figcaption>A P1MC cistern in Ceará (Moacir Ximenes, Wikimedia Commons)</figcaption>
       </figure>
-      <div class="next reveal" :class="{ shown: step >= 8 }">
-        <span>Next</span>
-        A delegation from the UrbanHealthTwin team plans to visit São Paulo in spring/summer 2027, to explore collaboration beyond the project itself.
-      </div>
     </section>
   </div>
   <p class="src">Source: <a href="https://www.tudelft.nl/2023/brazil-china-india-collaborations/tu-delft-extends-strong-collaboration-with-brazil">TU Delft extends strong collaboration with Brazil (2023)</a></p>
@@ -76,16 +72,14 @@ li b span { color: #007fa8; }
 li p { margin: 1px 0 0; color: #40525a; font-size: 0.54em !important; line-height: 1.35; }
 .strip { display: grid; grid-template-columns: repeat(4, 1fr); gap: 7px; }
 figure { margin: 0; }
-.strip img { display: block; width: 100%; height: 60px; object-fit: cover; border: 1px solid #d9e2e6; }
+.strip img { display: block; width: 100%; height: 52px; object-fit: cover; border: 1px solid #d9e2e6; }
 figcaption { margin-top: 2px; color: #64727a; font-size: 0.42em; line-height: 1.2; }
 .desc { margin: 0 0 8px; color: #40525a; font-size: 0.6em !important; line-height: 1.4; }
 .desc b { color: #007fa8; }
 .chips { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 8px; }
 .chips span { padding: 2px 8px; border-radius: 10px; background: #fff; border: 1px solid #d9e2e6; color: #51616a; font-size: 0.48em; }
-.cist img { display: block; width: 100%; height: 84px; object-fit: cover; object-position: 50% 72%; border: 1px solid #d9e2e6; }
-.next { margin-top: 8px; padding: 7px 10px; background: #010101; color: #fff; font-size: 0.5em; line-height: 1.4; }
-.next span { display: block; margin-bottom: 2px; color: #00aeef; font-size: 0.82em; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; }
-.src { margin: 4px 0 0; color: #829099; font-size: 0.4em !important; }
+.cist img { display: block; width: 100%; height: 150px; object-fit: cover; object-position: 50% 72%; border: 1px solid #d9e2e6; }
+.src { margin: 2px 0 0; color: #829099; font-size: 0.4em !important; }
 .src a { color: #829099; }
 .reveal { opacity: 0; transform: translateY(8px); transition: opacity 0.35s ease, transform 0.35s ease; }
 .reveal.shown { opacity: 1; transform: none; }

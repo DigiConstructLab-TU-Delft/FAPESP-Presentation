@@ -58,6 +58,16 @@ layout: default
 layout: default
 ---
 
+<p class="kicker">Past collaboration</p>
+
+# Building on earlier work with Brazil
+
+<PastCollab />
+
+---
+layout: default
+---
+
 <p class="kicker">We have 1 ongoing project with Brazil</p>
 
 # UrbanHealthTwin
@@ -108,11 +118,11 @@ layout: default
 layout: default
 ---
 
-<p class="kicker">Past collaboration</p>
+<p class="kicker">Working together</p>
 
-# Building on earlier work with Brazil
+# UrbanHealthTwin: our visits and the road ahead
 
-<PastCollab />
+<TeamTimeline />
 
 ---
 layout: default

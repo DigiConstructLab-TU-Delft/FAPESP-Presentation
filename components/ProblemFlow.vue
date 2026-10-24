@@ -1,32 +1,36 @@
 <script setup lang="ts">
 import { useAutoSteps } from '../composables/useAutoSteps'
+import { useClickStages } from '../composables/useClickStages'
 
 // The problem as a branching flow with hand-drawn (SVG) cartoons.
-// step: 1 climate · 2 flood/drought · 3 blue-green · 4 intended branch · 5 unintended branch · 6 heat · 7 causes
-const step = useAutoSteps(7, 380, 150)
+// Automatic: 1 climate · 2 flood/drought · 3 blue-green · 4 intended branch.
+// Click 1: the unintended branch (mosquito habitat, then disease, then the heat note).
+// Click 2: why mosquitoes thrive (four cards, one after another).
+const step = useAutoSteps(4, 380, 150)
+const [after1, after2] = useClickStages([3, 4], 300)
 
 type Part = { t: string; hl?: boolean }
 type Tone = 'good' | 'risk'
-const cards: { ill: string; cx: number; cy: number; w: number; title: Part[]; sub: string; at: number; tone?: Tone; tab?: string }[] = [
+const cards: { ill: string; cx: number; cy: number; w: number; title: Part[]; sub: string; at: number; c1?: number; tone?: Tone; tab?: string }[] = [
   { ill: 'climate', cx: 66, cy: 102, w: 124, title: [{ t: 'Climate extremes' }], sub: 'heat, storms, shifting rain', at: 1 },
   { ill: 'flood', cx: 222, cy: 52, w: 124, title: [{ t: 'Floods' }], sub: 'too much water', at: 2 },
   { ill: 'drought', cx: 222, cy: 152, w: 124, title: [{ t: 'Drought' }], sub: 'too little water', at: 2 },
   { ill: 'bgi', cx: 388, cy: 102, w: 132, title: [{ t: 'Blue-green interventions' }], sub: 'wetlands, ponds, green roofs', at: 3 },
   { ill: 'good', cx: 566, cy: 52, w: 136, title: [{ t: 'Fewer floods and droughts' }], sub: 'water held and slowed in the city', at: 4, tone: 'good', tab: 'Intended' },
   { ill: 'city', cx: 730, cy: 52, w: 124, title: [{ t: 'More resilience' }], sub: 'to heat and floods', at: 4, tone: 'good' },
-  { ill: 'mozzie', cx: 566, cy: 152, w: 136, title: [{ t: 'Without an ' }, { t: 'integral', hl: true }, { t: ' vision' }], sub: 'standing, warm water', at: 5, tone: 'risk', tab: 'Unintended' },
-  { ill: 'virus', cx: 730, cy: 152, w: 124, title: [{ t: 'Vector-borne disease' }], sub: 'dengue, Zika, West Nile', at: 5, tone: 'risk' },
+  { ill: 'mozzie', cx: 566, cy: 152, w: 136, title: [{ t: 'Without an ' }, { t: 'integral', hl: true }, { t: ' vision' }], sub: 'standing, warm water', at: 0, c1: 1, tone: 'risk', tab: 'Unintended' },
+  { ill: 'virus', cx: 730, cy: 152, w: 124, title: [{ t: 'Vector-borne disease' }], sub: 'dengue, Zika, West Nile', at: 0, c1: 2, tone: 'risk' },
 ]
-const arrows: { d: string; at: number; tone?: Tone }[] = [
+const arrows: { d: string; at: number; c1?: number; tone?: Tone }[] = [
   { d: 'M128 94 C 144 94, 144 52, 158 52', at: 2 },
   { d: 'M128 110 C 144 110, 144 152, 158 152', at: 2 },
   { d: 'M284 52 C 304 52, 304 94, 320 94', at: 3 },
   { d: 'M284 152 C 304 152, 304 110, 320 110', at: 3 },
   { d: 'M454 94 C 476 94, 476 52, 496 52', at: 4, tone: 'good' },
   { d: 'M634 52 H 666', at: 4, tone: 'good' },
-  { d: 'M454 110 C 476 110, 476 152, 496 152', at: 5, tone: 'risk' },
-  { d: 'M634 152 H 666', at: 5, tone: 'risk' },
-  { d: 'M600 208 V 200', at: 6, tone: 'risk' },
+  { d: 'M454 110 C 476 110, 476 152, 496 152', at: 0, c1: 1, tone: 'risk' },
+  { d: 'M634 152 H 666', at: 0, c1: 2, tone: 'risk' },
+  { d: 'M600 208 V 200', at: 0, c1: 3, tone: 'risk' },
 ]
 const causes: { title: Part[]; text: string }[] = [
   { title: [{ t: 'Still water' }], text: 'Ponds, wetlands and swales hold water for days, and mosquitoes lay their eggs in standing water.' },
@@ -34,6 +38,7 @@ const causes: { title: Part[]; text: string }[] = [
   { title: [{ t: 'Vegetation' }], text: 'Plants give shade, humidity and shelter, and draw the birds and animals that mosquitoes feed on.' },
   { title: [{ t: 'No ' }, { t: 'integral', hl: true }, { t: ' view' }], text: 'Water, green space and health are planned apart, so nobody designs out breeding sites or plans upkeep.' },
 ]
+const on = (it: { at: number; c1?: number }) => (it.c1 ? after1.value >= it.c1 : step.value >= it.at)
 const stroke = (t?: string) => (t === 'good' ? '#2e9e5b' : t === 'risk' ? '#e85d3f' : '#829099')
 </script>
 
@@ -114,11 +119,11 @@ const stroke = (t?: string) => (t === 'good' ? '#2e9e5b' : t === 'risk' ? '#e85d
       </g>
     </defs>
 
-    <g v-for="(a, i) in arrows" :key="i" class="r" :class="{ on: step >= a.at }">
+    <g v-for="(a, i) in arrows" :key="i" class="r" :class="{ on: on(a) }">
       <path :d="a.d" fill="none" :stroke="stroke(a.tone)" stroke-width="2" marker-end="url(#uh-arr)" />
     </g>
 
-    <g v-for="c in cards" :key="c.ill" class="r" :class="{ on: step >= c.at }">
+    <g v-for="c in cards" :key="c.ill" class="r" :class="{ on: on(c) }">
       <rect :x="c.cx - c.w / 2" :y="c.cy - 46" :width="c.w" height="92" rx="7" fill="#fff" :stroke="stroke(c.tone) === '#829099' ? '#d9e2e6' : stroke(c.tone)" :stroke-width="c.tone ? 2 : 1.2" />
       <use :href="`#ill-${c.ill}`" :transform="`translate(${c.cx} ${c.cy - 14})`" />
       <text :x="c.cx" :y="c.cy + 26" text-anchor="middle" class="ct"><tspan v-for="(p, i) in c.title" :key="i" :class="{ hl: p.hl }">{{ p.t }}</tspan></text>
@@ -129,7 +134,7 @@ const stroke = (t?: string) => (t === 'good' ? '#2e9e5b' : t === 'risk' ? '#e85d
       </g>
     </g>
 
-    <g class="r" :class="{ on: step >= 6 }">
+    <g class="r" :class="{ on: after1 >= 3 }">
       <rect x="330" y="208" width="462" height="31" rx="6" fill="#fff8f5" stroke="#e85d3f" stroke-dasharray="4 3" />
       <g transform="translate(350 223)" stroke="#1d2830" stroke-width="1.1">
         <rect x="-3" y="-12" width="6" height="18" rx="3" fill="#fff" /><rect x="-1.4" y="-3" width="2.8" height="9" fill="#e85d3f" stroke="none" /><circle cx="0" cy="8" r="5" fill="#e85d3f" />
@@ -139,15 +144,16 @@ const stroke = (t?: string) => (t === 'good' ? '#2e9e5b' : t === 'risk' ? '#e85d
     </g>
 
   </svg>
-  <div class="why reveal" :class="{ shown: step >= 7 }">
-    <p class="why-label">Why mosquitoes thrive in blue-green spaces</p>
+  <div class="why">
+    <p class="why-label reveal" :class="{ shown: after2 >= 1 }">Why mosquitoes thrive in blue-green spaces</p>
     <div class="why-grid">
-      <div v-for="(c, i) in causes" :key="i" class="why-card">
+      <div v-for="(c, i) in causes" :key="i" class="why-card reveal" :class="{ shown: after2 >= i + 1 }">
         <h4><template v-for="(p, j) in c.title" :key="j"><span :class="{ hl: p.hl }">{{ p.t }}</span></template></h4>
         <p>{{ c.text }}</p>
       </div>
     </div>
   </div>
+  <div class="click-markers" aria-hidden="true"><span v-click="1" /><span v-click="2" /></div>
 </template>
 
 <style scoped>
@@ -161,6 +167,7 @@ const stroke = (t?: string) => (t === 'good' ? '#2e9e5b' : t === 'risk' ? '#e85d
 .tab { font-size: 7.5px; font-weight: 700; fill: #fff; letter-spacing: 0.06em; text-transform: uppercase; }
 .cs2 { font-size: 8px; fill: #51616a; }
 .why { margin-top: 2px; }
+.click-markers { height: 0; overflow: hidden; }
 .why-label { margin: 0 0 6px; color: #007fa8; font-size: 0.5em !important; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; }
 .why-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
 .why-card { padding: 6px 10px 7px; border-top: 4px solid #e85d3f; background: #fff8f5; }
