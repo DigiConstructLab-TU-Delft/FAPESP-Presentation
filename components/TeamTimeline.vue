@@ -8,7 +8,7 @@ const step = useAutoSteps(9, 250, 150)
 
 const milestones = [
   { name: 'Map', months: 'Months 0–24', text: 'Map stakeholders and set up the transdisciplinary collaboration framework', at: 4 },
-  { name: 'Listen', months: 'Months 6–36', text: 'Inventory vulnerability and inequalities, field work and local blue-green knowledge', at: 5 },
+  { name: 'Listen', months: 'Months 6–36', text: 'Take stock of vulnerability and inequalities, carry out field work and gather local blue-green knowledge', at: 5 },
   { name: 'Build the twin', months: 'Months 6–36', text: 'Flood risk mapping and simulation, climate uncertainty modelling and simulation, urban microclimate modelling and simulation, a knowledge graph for data integration and the interactive digital twin', at: 6 },
   { name: 'Model disease risk', months: 'Months 12–36', text: 'Epidemiological framework and disease-risk scenarios, linked to urban climate and ecological models', at: 7 },
   { name: 'Co-create', months: 'Months 18–48', text: 'Co-design workshops and climate-health adaptation strategies with communities and decision makers', at: 8 },

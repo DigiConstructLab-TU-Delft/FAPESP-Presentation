@@ -11,7 +11,7 @@ const cities = [
     facts: [
       '674,000 residents, Europe’s largest seaport, much of the city below sea level',
       'Water squares such as Benthemplein (2013) store stormwater and double as sports and public space, co-designed with local groups',
-      'In 2026 its province, Zuid-Holland, has the most West Nile cases in the Netherlands (41 of 72). The tiger mosquito was found in Delfshaven in 2024',
+      'So far in 2026, its province, Zuid-Holland, has the most West Nile cases in the Netherlands (41 of 72). The tiger mosquito was found in Delfshaven in 2024',
     ],
     brings: 'Long-term adaptation planning, designed blue-green space, data and models',
     at: 1,

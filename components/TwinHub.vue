@@ -15,7 +15,7 @@ const roles = [
   { title: 'Holds possible futures', sub: 'risks from engineering, climate and epidemiological models' },
   { title: 'Plans blue-green interventions', sub: 'with local knowledge, showing intended and unintended effects' },
   { title: 'Builds shared understanding', sub: 'of opportunities and risks for stakeholders and decision makers' },
-  { title: 'Enables risk-informed decisions', sub: 'evidence-based decision making' },
+  { title: 'Enables risk-informed decisions', sub: 'evidence-based decision-making' },
   { title: 'Living lab and knowledge hub', sub: 'for the region, now and in the future' },
 ]
 const roleY = (i: number) => 4 + i * 56

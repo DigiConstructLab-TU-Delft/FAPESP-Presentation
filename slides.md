@@ -38,21 +38,21 @@ layout: default
 layout: default
 ---
 
-<p class="kicker">Who we are</p>
+<p class="kicker">Our focus</p>
 
-# The people of IDM
+# What <span style="color:#00a6d6">“integral”</span> means for design and management
 
-<PeopleGrid />
+<IntegralFocus />
 
 ---
 layout: default
 ---
 
-<p class="kicker">Our focus</p>
+<p class="kicker">Who we are</p>
 
-# What <span style="color:#00a6d6">"integral"</span> means for design and management
+# The people of IDM
 
-<IntegralFocus />
+<PeopleGrid />
 
 ---
 layout: default
@@ -68,7 +68,7 @@ layout: default
 layout: default
 ---
 
-<p class="kicker">We have 1 ongoing project with Brazil</p>
+<p class="kicker">We have one ongoing project with Brazil</p>
 
 # UrbanHealthTwin
 

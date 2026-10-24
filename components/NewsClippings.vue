@@ -23,7 +23,7 @@ const columns: Column[] = [
       { src: 'Resource, Wageningen (Netherlands)', date: '7 Sep 2026', head: 'Acht vragen over het westnijlvirus', line: 'Eight questions about West Nile virus.' },
       { src: 'Portal de Prefeitura (Brazil)', date: '27 Jan 2026', head: 'Alerta para surto de dengue dispara após semana de temporais em diversas regiões', line: 'Dengue outbreak alert soars after a week of storms in several regions.' },
       { src: 'Afya (Brazil)', date: '8 Oct 2026', head: 'Alerta ou risco para Aedes aegypti atinge 49,2% das cidades', line: 'Alert or risk for Aedes aegypti reaches 49.2% of cities.' },
-      { src: 'O POVO+ (Brazil)', date: '18 Oct 2026', head: 'Ceará chega a 15 mil casos de dengue em 2026, quase 4 vezes mais que ano passado', line: 'Ceará reaches 15 thousand dengue cases in 2026, almost 4 times last year.' },
+      { src: 'O POVO+ (Brazil)', date: '18 Oct 2026', head: 'Ceará chega a 15 mil casos de dengue em 2026, quase 4 vezes mais que ano passado', line: 'Ceará reaches 15 thousand dengue cases in 2026, almost four times last year’s total.' },
     ],
   },
 ]
