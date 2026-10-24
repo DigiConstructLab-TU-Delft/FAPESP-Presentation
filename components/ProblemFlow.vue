@@ -4,10 +4,9 @@ import { useClickStages } from '../composables/useClickStages'
 
 // The problem as a branching flow with hand-drawn (SVG) cartoons.
 // Automatic: 1 climate · 2 flood/drought · 3 blue-green · 4 intended branch.
-// Click 1: the unintended branch (mosquito habitat, then disease, then the heat note).
-// Click 2: why mosquitoes thrive (four cards, one after another).
+// Click 1: the unintended branch, the heat note and the "why mosquitoes thrive" cards, all at once.
 const step = useAutoSteps(4, 380, 150)
-const [after1, after2] = useClickStages([3, 4], 300)
+const [after1] = useClickStages([1])
 
 type Part = { t: string; hl?: boolean }
 type Tone = 'good' | 'risk'
@@ -38,7 +37,7 @@ const causes: { title: Part[]; text: string }[] = [
   { title: [{ t: 'Vegetation' }], text: 'Plants give shade, humidity and shelter, and draw the birds and animals that mosquitoes feed on.' },
   { title: [{ t: 'No ' }, { t: 'integral', hl: true }, { t: ' view' }], text: 'Water, green space and health are planned apart, so nobody designs out breeding sites or plans upkeep.' },
 ]
-const on = (it: { at: number; c1?: number }) => (it.c1 ? after1.value >= it.c1 : step.value >= it.at)
+const on = (it: { at: number; c1?: number }) => (it.c1 ? after1.value >= 1 : step.value >= it.at)
 const stroke = (t?: string) => (t === 'good' ? '#2e9e5b' : t === 'risk' ? '#e85d3f' : '#829099')
 </script>
 
@@ -134,7 +133,7 @@ const stroke = (t?: string) => (t === 'good' ? '#2e9e5b' : t === 'risk' ? '#e85d
       </g>
     </g>
 
-    <g class="r" :class="{ on: after1 >= 3 }">
+    <g class="r" :class="{ on: after1 >= 1 }">
       <rect x="330" y="208" width="462" height="31" rx="6" fill="#fff8f5" stroke="#e85d3f" stroke-dasharray="4 3" />
       <g transform="translate(350 223)" stroke="#1d2830" stroke-width="1.1">
         <rect x="-3" y="-12" width="6" height="18" rx="3" fill="#fff" /><rect x="-1.4" y="-3" width="2.8" height="9" fill="#e85d3f" stroke="none" /><circle cx="0" cy="8" r="5" fill="#e85d3f" />
@@ -145,15 +144,15 @@ const stroke = (t?: string) => (t === 'good' ? '#2e9e5b' : t === 'risk' ? '#e85d
 
   </svg>
   <div class="why">
-    <p class="why-label reveal" :class="{ shown: after2 >= 1 }">Why mosquitoes thrive in blue-green spaces</p>
+    <p class="why-label reveal" :class="{ shown: after1 >= 1 }">Why mosquitoes thrive in blue-green spaces</p>
     <div class="why-grid">
-      <div v-for="(c, i) in causes" :key="i" class="why-card reveal" :class="{ shown: after2 >= i + 1 }">
+      <div v-for="(c, i) in causes" :key="i" class="why-card reveal" :class="{ shown: after1 >= 1 }">
         <h4><template v-for="(p, j) in c.title" :key="j"><span :class="{ hl: p.hl }">{{ p.t }}</span></template></h4>
         <p>{{ c.text }}</p>
       </div>
     </div>
   </div>
-  <div class="click-markers" aria-hidden="true"><span v-click="1" /><span v-click="2" /></div>
+  <div class="click-markers" aria-hidden="true"><span v-click="1" /></div>
 </template>
 
 <style scoped>
