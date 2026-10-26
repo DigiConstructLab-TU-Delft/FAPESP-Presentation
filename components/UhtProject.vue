@@ -25,9 +25,19 @@ const step = useAutoSteps(4, 450, 150)
 <template>
   <div class="uht">
     <div class="uht-text reveal" :class="{ shown: step >= 1 }">
-      <p class="lead">A participatory digital twin to investigate the effects of nature-based solutions on climate change-induced urban health challenges.</p>
+      <p class="lead">A participatory digital twin to understand climate change-induced urban health challenges.</p>
       <p class="facts"><b>2026–2030</b> · NWO–FAPESP Cooperation Brazil · Leads: Johan Ninan and Ranjith Soman (TU Delft), Estela Macedo Alves (University of São Paulo, Brazil)</p>
       <img src="/figures/uht-participatory.png" alt="People around a shared digital map exploring climate risks and co-creating interventions" class="uht-figure" />
+      <div class="cases">
+        <div class="case rotterdam reveal" :class="{ shown: step >= 2 }">
+          <h4>Rotterdam</h4>
+          <p>Brings planning experience</p>
+        </div>
+        <div class="case saopaulo reveal" :class="{ shown: step >= 2 }">
+          <h4>São Paulo</h4>
+          <p>Brings experience and community-led innovation</p>
+        </div>
+      </div>
     </div>
     <div class="uht-logos">
       <p class="uht-label reveal" :class="{ shown: step >= 2 }">Participating academic institutions</p>
@@ -55,9 +65,14 @@ const step = useAutoSteps(4, 450, 150)
 <style scoped>
 .uht { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 36px; align-items: start; margin-top: 4px; }
 .lead { margin: 0 0 10px; font-size: 0.82em !important; line-height: 1.35; }
-.uht-figure { display: block; width: 100%; max-height: 200px; margin-top: 10px; object-fit: contain; }
+.uht-figure { display: block; width: 100%; max-height: 130px; margin-top: 8px; object-fit: contain; }
 .facts { margin: 0; padding: 10px 14px; border-left: 5px solid #00aeef; background: #eff9fc; color: #40525a; font-size: 0.58em !important; line-height: 1.4; }
 .facts b { color: #007fa8; }
+.cases { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 12px; }
+.case { padding: 10px 14px; background: #f7fbfc; border-top: 5px solid #00aeef; }
+.case.saopaulo { border-top-color: #2e9e5b; }
+.case h4 { margin: 0 0 4px; color: #010101; font-size: 0.7em !important; }
+.case p { margin: 0; color: #40525a; font-size: 0.58em !important; line-height: 1.4; }
 .uht-logos { padding: 14px 16px 16px; background: #f7fbfc; border-top: 5px solid #00aeef; }
 .uht-label { margin: 0 0 8px; color: #007fa8; font-size: 0.46em !important; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; }
 .uht-label:not(:first-child) { margin-top: 11px; }
