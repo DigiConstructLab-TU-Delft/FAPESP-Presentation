@@ -8,9 +8,9 @@ const step = useAutoSteps(7, 280, 150)
 
 const timeline = [
   { when: '2015', place: 'São Paulo', text: 'Prof. Marcel Hertogh directed the international seminar on the Architectural and Urban Articulation of the Metropolitan Waterway System of São Paulo.', at: 1 },
-  { when: 'March 2023', place: 'FAU-USP', text: 'Seminar “The architectural project of fluid grounds”. Hertogh’s keynote: “Towards Resiliency: Transdisciplinary approaches for future infrastructures”.', at: 2 },
+  { when: 'March 2023', place: 'FAU-USP', text: 'Seminar “The architectural project of fluid grounds”. Prof. Hertogh’s keynote: “Towards Resiliency: Transdisciplinary approaches for future infrastructures”.', at: 2 },
   { when: 'March 2023', place: 'City of São Paulo', text: 'Meetings with Fernando Barrancos Chucre (SGM-SEPEP) on fluvial mobility and waterway transport (the Aquático Project) and circular wastewater recovery.', at: 3 },
-  { when: 'March 2023', place: 'Brasília', text: 'Hertogh and Dr. Yirang Lim met Dr. Jorge Barros (CEO Brazil, Smart Cities Business America) and framed an MoU with the Resilient Delta Initiative.', at: 4 },
+  { when: 'March 2023', place: 'Brasília', text: 'Prof. Hertogh and Dr. Yirang Lim met Dr. Jorge Barros (CEO Brazil, Smart Cities Business America) and framed an MoU with the Resilient Delta Initiative.', at: 4 },
   { when: '23–25 May 2023', place: 'SCBA Congress, São Paulo', text: 'Keynotes and collaborative workshops.', at: 5 },
 ]
 const photos = [

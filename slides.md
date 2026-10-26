@@ -58,16 +58,6 @@ layout: default
 layout: default
 ---
 
-<p class="kicker">UrbanHealthTwin</p>
-
-# How UrbanHealthTwin enables an <span style="color:#00a6d6">integral</span> vision
-
-<TwinHub />
-
----
-layout: default
----
-
 <p class="kicker">Who we are</p>
 
 # The people of IDM
@@ -89,6 +79,16 @@ layout: default
 ---
 
 <ClosingSlide />
+
+---
+layout: default
+---
+
+<p class="kicker">UrbanHealthTwin</p>
+
+# How UrbanHealthTwin enables an <span style="color:#00a6d6">integral</span> vision
+
+<TwinHub />
 
 ---
 layout: default
