@@ -74,6 +74,16 @@ layout: default
 
 <PastCollab />
 
+<!--
+Integral design is already part of our collaboration with Brazil, not a new idea we are proposing.
+
+- The partnership is built on architecture and urban design applied to water systems: the 2015 São Paulo seminar on the metropolitan waterway system and the 2023 FAU-USP seminar on the architectural project of fluid grounds.
+- Prof. Marcel Hertogh's 2023 keynote on transdisciplinary approaches for future infrastructures is the same integral view that UrbanHealthTwin builds on.
+- The 2023 meetings with the City of São Paulo connected design to city management: fluvial mobility, waterway transport and circular wastewater recovery.
+- The Brasília meeting led to an MoU framed with the Resilient Delta Initiative, which is the major partnership step: a formal link between TU Delft and Brazilian partners on resilient, integral infrastructure.
+- This history is the basis for UrbanHealthTwin: a relationship already built on shared projects, cities and institutions.
+-->
+
 ---
 layout: default
 ---
