@@ -1,0 +1,47 @@
+
+.collab[data-v-3cbe2c4c] { display: grid; grid-template-columns: 1.6fr 1fr; gap: 16px;
+}
+.col[data-v-3cbe2c4c] { padding: 10px 14px 12px; background: #f7fbfc; border-top: 5px solid #00aeef;
+}
+h3[data-v-3cbe2c4c] { margin: 0; color: #010101; font-size: 0.72em; line-height: 1.2;
+}
+.where[data-v-3cbe2c4c] { margin: 2px 0 7px; color: #007fa8; font-size: 0.44em !important; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+}
+ol[data-v-3cbe2c4c] { margin: 0 0 8px; padding: 0; list-style: none; border-left: 2px solid #00aeef;
+}
+li[data-v-3cbe2c4c] { position: relative; margin: 0 0 4px; padding-left: 12px;
+}
+li[data-v-3cbe2c4c]::before { content: ''; position: absolute; left: -6px; top: 3px; width: 9px; height: 9px; border-radius: 50%; background: #00aeef; border: 2px solid #f7fbfc;
+}
+li b[data-v-3cbe2c4c] { display: block; color: #1d2830; font-size: 0.6em;
+}
+li b span[data-v-3cbe2c4c] { color: #007fa8;
+}
+li p[data-v-3cbe2c4c] { margin: 1px 0 0; color: #40525a; font-size: 0.54em !important; line-height: 1.35;
+}
+.strip[data-v-3cbe2c4c] { display: grid; grid-template-columns: repeat(4, 1fr); gap: 7px;
+}
+figure[data-v-3cbe2c4c] { margin: 0;
+}
+.strip img[data-v-3cbe2c4c] { display: block; width: 100%; height: 52px; object-fit: cover; border: 1px solid #d9e2e6;
+}
+figcaption[data-v-3cbe2c4c] { margin-top: 2px; color: #64727a; font-size: 0.42em; line-height: 1.2;
+}
+.desc[data-v-3cbe2c4c] { margin: 0 0 8px; color: #40525a; font-size: 0.6em !important; line-height: 1.4;
+}
+.desc b[data-v-3cbe2c4c] { color: #007fa8;
+}
+.chips[data-v-3cbe2c4c] { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 8px;
+}
+.chips span[data-v-3cbe2c4c] { padding: 2px 8px; border-radius: 10px; background: #fff; border: 1px solid #d9e2e6; color: #51616a; font-size: 0.48em;
+}
+.cist img[data-v-3cbe2c4c] { display: block; width: 100%; height: 150px; object-fit: cover; object-position: 50% 72%; border: 1px solid #d9e2e6;
+}
+.src[data-v-3cbe2c4c] { margin: 2px 0 0; color: #829099; font-size: 0.4em !important;
+}
+.src a[data-v-3cbe2c4c] { color: #829099;
+}
+.reveal[data-v-3cbe2c4c] { opacity: 0; transform: translateY(8px); transition: opacity 0.35s ease, transform 0.35s ease;
+}
+.reveal.shown[data-v-3cbe2c4c] { opacity: 1; transform: none;
+}
