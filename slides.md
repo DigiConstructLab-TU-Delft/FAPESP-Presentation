@@ -28,31 +28,21 @@ routerMode: hash
 layout: default
 ---
 
+<p class="kicker">From the faculty to IDM</p>
+
+# Where are we housed?
+
+<OrgPath />
+
+---
+layout: default
+---
+
 <p class="kicker">Our focus</p>
 
 # What <span style="color:#00a6d6">“integral”</span> means for design and management
 
 <IntegralFocus />
-
----
-layout: default
----
-
-<p class="kicker">The problem</p>
-
-# Without an <span style="color:#00a6d6">integral</span> vision, solutions can backfire
-
-<ProblemFlow />
-
----
-layout: default
----
-
-<p class="kicker">We have one ongoing project with Brazil</p>
-
-# UrbanHealthTwin
-
-<UhtProject />
 
 ---
 layout: default
@@ -88,27 +78,21 @@ Integral design is already part of our collaboration with Brazil, not a new idea
 layout: default
 ---
 
-<ClosingSlide />
+<p class="kicker">We have one ongoing project with Brazil</p>
+
+# UrbanHealthTwin
+
+<UhtProject />
 
 ---
 layout: default
 ---
 
-<p class="kicker">UrbanHealthTwin</p>
+<p class="kicker">The problem</p>
 
-# How UrbanHealthTwin enables an <span style="color:#00a6d6">integral</span> vision
+# Without an <span style="color:#00a6d6">integral</span> vision, solutions can backfire
 
-<TwinHub />
-
----
-layout: default
----
-
-<p class="kicker">From the faculty to IDM</p>
-
-# Where are we housed?
-
-<OrgPath />
+<ProblemFlow />
 
 ---
 layout: default
@@ -119,6 +103,16 @@ layout: default
 # Blue-green solutions and mosquitoes in the news
 
 <NewsClippings />
+
+---
+layout: default
+---
+
+<p class="kicker">UrbanHealthTwin</p>
+
+# How UrbanHealthTwin enables an <span style="color:#00a6d6">integral</span> vision
+
+<TwinHub />
 
 ---
 layout: default
@@ -139,3 +133,9 @@ layout: default
 # UrbanHealthTwin: our visits and the road ahead
 
 <TeamTimeline />
+
+---
+layout: default
+---
+
+<ClosingSlide />
