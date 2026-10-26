@@ -15,7 +15,7 @@ const cards: { ill: string; cx: number; cy: number; w: number; title: Part[]; su
   { ill: 'flood', cx: 222, cy: 52, w: 124, title: [{ t: 'Floods' }], sub: 'too much water', at: 2 },
   { ill: 'drought', cx: 222, cy: 152, w: 124, title: [{ t: 'Drought' }], sub: 'too little water', at: 2 },
   { ill: 'bgi', cx: 388, cy: 102, w: 132, title: [{ t: 'Blue-green interventions' }], sub: 'wetlands, ponds, green roofs', at: 3 },
-  { ill: 'good', cx: 566, cy: 52, w: 136, title: [{ t: 'Fewer floods and droughts' }], sub: 'water held and slowed in the city', at: 4, tone: 'good', tab: 'Intended' },
+  { ill: 'good', cx: 566, cy: 52, w: 136, title: [{ t: 'Fewer floods and droughts' }], sub: 'water held in the city', at: 4, tone: 'good', tab: 'Intended' },
   { ill: 'city', cx: 730, cy: 52, w: 124, title: [{ t: 'More resilience' }], sub: 'to heat and floods', at: 4, tone: 'good' },
   { ill: 'mozzie', cx: 566, cy: 152, w: 136, title: [{ t: 'Without an ' }, { t: 'integral', hl: true }, { t: ' vision' }], sub: 'standing, warm water', at: 0, c1: 1, tone: 'risk', tab: 'Unintended' },
   { ill: 'virus', cx: 730, cy: 152, w: 124, title: [{ t: 'Vector-borne disease' }], sub: 'dengue, Zika, West Nile', at: 0, c1: 2, tone: 'risk' },
@@ -32,10 +32,10 @@ const arrows: { d: string; at: number; c1?: number; tone?: Tone }[] = [
   { d: 'M600 208 V 200', at: 0, c1: 3, tone: 'risk' },
 ]
 const causes: { title: Part[]; text: string }[] = [
-  { title: [{ t: 'Still water' }], text: 'Ponds, wetlands and swales hold water for days, and mosquitoes lay their eggs in standing water.' },
-  { title: [{ t: 'Warmth' }], text: 'Heat shortens the mosquito life cycle and speeds up virus growth inside it, so more mosquitoes carry disease, sooner.' },
-  { title: [{ t: 'Vegetation' }], text: 'Plants give shade, humidity and shelter, and draw the birds and animals that mosquitoes feed on.' },
-  { title: [{ t: 'No ' }, { t: 'integral', hl: true }, { t: ' view' }], text: 'Water, green space and health are planned apart, so nobody designs out breeding sites or plans upkeep.' },
+  { title: [{ t: 'No ' }, { t: 'integral', hl: true }, { t: ' view' }], text: 'Water, green space and health are planned apart.' },
+  { title: [{ t: 'Still water' }], text: 'Standing water is where mosquitoes breed.' },
+  { title: [{ t: 'Warmth' }], text: 'Heat speeds up mosquito growth and virus spread.' },
+  { title: [{ t: 'Vegetation' }], text: 'Shade and humidity attract mosquitoes.' },
 ]
 const on = (it: { at: number; c1?: number }) => (it.c1 ? after1.value >= 1 : step.value >= it.at)
 const stroke = (t?: string) => (t === 'good' ? '#2e9e5b' : t === 'risk' ? '#e85d3f' : '#829099')
@@ -139,7 +139,6 @@ const stroke = (t?: string) => (t === 'good' ? '#2e9e5b' : t === 'risk' ? '#e85d
         <rect x="-3" y="-12" width="6" height="18" rx="3" fill="#fff" /><rect x="-1.4" y="-3" width="2.8" height="9" fill="#e85d3f" stroke="none" /><circle cx="0" cy="8" r="5" fill="#e85d3f" />
       </g>
       <text x="366" y="221" class="cb">Rising temperatures speed up mosquito growth.</text>
-      <text x="366" y="233" class="cs2">The risk grows in both Brazil and Europe as the climate warms.</text>
     </g>
 
   </svg>
