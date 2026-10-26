@@ -68,22 +68,6 @@ layout: default
 layout: default
 ---
 
-<ClosingSlide />
-
----
-layout: default
----
-
-<p class="kicker">From the faculty to IDM</p>
-
-# Where are we housed?
-
-<OrgPath />
-
----
-layout: default
----
-
 <p class="kicker">Who we are</p>
 
 # The people of IDM
@@ -99,6 +83,22 @@ layout: default
 # Building on earlier work with Brazil
 
 <PastCollab />
+
+---
+layout: default
+---
+
+<ClosingSlide />
+
+---
+layout: default
+---
+
+<p class="kicker">From the faculty to IDM</p>
+
+# Where are we housed?
+
+<OrgPath />
 
 ---
 layout: default
